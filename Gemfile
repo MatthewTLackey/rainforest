@@ -43,3 +43,9 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+
+group :test, :development do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails'
+end
