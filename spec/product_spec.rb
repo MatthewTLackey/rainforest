@@ -6,10 +6,10 @@ describe Product do
   subject { zombie }
 
 
-it 'must have a description' do 
-  product.description = ""
-  product.should_not be_valid
-end
+  it 'must have a description' do 
+    product.description = ""
+    product.should_not be_valid
+  end
 
 
 
