@@ -1,11 +1,13 @@
 <h1>Welcome to the Jungle</h1>
 <p>Your source for great products and reviews for all the hottest items.</p>
 
-<%= link_to "Add a product", "/products/new" %>
+<%= link_to "Add a product", new_product_path %>
 
-<% @products.each do |product| %>
-<ul>
-  <li><%= link_to product[:name], "/products/#{product[:id]}"%>, $<%= product.formatted_price %></li>
-</ul>
 
-<% end %>
+<h1>Products <small><%= page_entries_info @products %></small></h1>
+<hr/>
+<div id="products">
+  <%= render @products %>
+</div>
+
+<%= paginate @products %>

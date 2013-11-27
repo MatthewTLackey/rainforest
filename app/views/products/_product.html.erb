@@ -1,0 +1,16 @@
+
+
+
+
+<ul>
+<%# @products.each do |product| %>
+
+  <h2>
+    <li>
+      <%= link_to product[:name], "/products/#{product[:id]}"%>, $<%= product.formatted_price %>
+    </li>
+  </h2>
+
+  <p><%= truncate(product.description, length: 100) %></p>
+<%# end %>
+</ul>
