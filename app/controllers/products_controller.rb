@@ -4,9 +4,14 @@ class ProductsController < ApplicationController
   def index
     @products = Product.order('products.created_at DESC').page(params[:page])
 
+    if params[:term]
+      @products = @products.where('name LIKE ?', "%#{params[:term]}%")
+    end
+
     respond_to do |format|
       format.js
       format.html
+      format.json { render json: @products } 
     end
   end
 

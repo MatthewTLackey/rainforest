@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.autocomplete
 //= require turbolinks
 //= require_tree .
 
@@ -26,4 +27,20 @@ jQuery(function() {
       }
     });
   }
+
+
+  $('#term').autocomplete({
+    minLength: 2,
+    source: 'products.json',
+    response: function(event, ui) {
+      for(var i = 0; i < ui.content.length; i++) {
+        var item = ui.content[i];
+        item.label = item.value = item.name;
+      }
+    },
+    select: function(event, ui) {
+      event.preventDefault();
+      window.location.href = 'products/' + ui.item.id;
+    }
+  });
 });
