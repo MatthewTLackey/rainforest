@@ -14,8 +14,8 @@
 
 <p><small><%= page_entries_info @products %></small><p>
 
-<div id="products">
+<div id="products_container">
   <%= render @products %>
 </div>
 
-<%= paginate @products %>
+<div class="pagination"<%= paginate @products %></div>

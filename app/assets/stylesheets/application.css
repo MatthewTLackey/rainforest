@@ -13,17 +13,26 @@
  *= require_tree .
  */
 body {
-  color: #1B1112;
+  font-family: sans-serif;
 
-  background-color: #A4E666;
-}
-
-.left_side {
-  background-color: #616536;
-
+  
 }
 
 .top_bar{
-  background-color: #31B96E;
+  background-color: #006400;
+  color: white;
+  padding: 5px;
+  width: 100%;
+}
 
+.top_bar a{
+  color: white;
+}
+
+.userinfo{
+  text-align: right;
+  position: relative;
+}
+.header_left{
+  float: left;
 }
